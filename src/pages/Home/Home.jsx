@@ -1,7 +1,9 @@
+import { Title } from './Home.styled';
+
 const HomePage = () => {
   return (
     <>
-      <h1>Home</h1>
+      <Title>Home</Title>
     </>
   );
 };

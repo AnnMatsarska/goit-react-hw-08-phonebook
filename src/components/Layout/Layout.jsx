@@ -1,16 +1,17 @@
+import { AppBar } from 'components/AppBar/AppBar';
+import { Loader } from 'components/Loader/Loader';
+import { Suspense } from 'react';
+import { Outlet } from 'react-router-dom';
+
 export const Layout = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <AppBar />
+      <main>
+        <Suspense fallback={<Loader />}>
+          <Outlet />
+        </Suspense>
+      </main>
+    </>
   );
 };
