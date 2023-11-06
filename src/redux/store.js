@@ -13,6 +13,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import { filterReducer } from './filter/slice';
+import { authReducer } from './auth/slice';
 
 const authConfig = {
   key: 'auth',
