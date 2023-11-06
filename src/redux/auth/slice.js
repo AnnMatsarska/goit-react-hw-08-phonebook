@@ -59,7 +59,6 @@ const authSlice = createSlice({
         state.user = action.payload;
         state.authenticated = true;
         state.isLoading = false;
-        if (state.token === null) return;
       })
       .addMatcher(
         isAnyOf(

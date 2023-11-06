@@ -1,9 +1,14 @@
-import { Title } from './Home.styled';
+import { Title, SubTitle, Wrapper, SpanText } from './Home.styled';
 
 const HomePage = () => {
   return (
     <>
-      <Title>Home</Title>
+      <Wrapper>
+        <Title>
+          Welcome to the Online Phone<SpanText>BOOK</SpanText>
+        </Title>
+        <SubTitle>Create - Store - Find</SubTitle>
+      </Wrapper>
     </>
   );
 };
