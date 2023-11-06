@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectAuthIsRefreshing } from 'redux/auth/selectors';
 import { refreshCurrentUserThunk } from 'redux/auth/operations';
 import { Loader } from 'components/Loader/Loader';
+import { PrivateRoute } from './PrivateRoute';
+import { RestrictedRoute } from './RestrictedRoute';
 
 const Home = lazy(() => import('pages/Home/Home'));
 const Login = lazy(() => import('pages/Login/Login'));
@@ -28,9 +30,30 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/contacts" element={<Contacts />} />
+            <Route
+              path="/register"
+              element={
+                <RestrictedRoute>
+                  <Register />
+                </RestrictedRoute>
+              }
+            />
+            <Route
+              path="/login"
+              element={
+                <RestrictedRoute>
+                  <Login />
+                </RestrictedRoute>
+              }
+            />
+            <Route
+              path="/contacts"
+              element={
+                <PrivateRoute>
+                  <Contacts />
+                </PrivateRoute>
+              }
+            />
           </Route>
         </Routes>
       )}
