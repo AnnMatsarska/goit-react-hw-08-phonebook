@@ -5,7 +5,7 @@ export const AuthNav = () => {
   return (
     <AuthNavWrapper>
       <NavLink to="/register">Register</NavLink>
-      <NavLink to="/login">Log In</NavLink>
+      <NavLink to="/login">Sign In</NavLink>
     </AuthNavWrapper>
   );
 };
