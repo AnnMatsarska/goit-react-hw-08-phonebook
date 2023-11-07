@@ -1,5 +1,4 @@
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
@@ -15,6 +14,8 @@ import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 
 import { signUpThunk } from 'redux/auth/operations';
+
+import { StyledButton } from './Register.styled';
 
 function Copyright(props) {
   return (
@@ -59,7 +60,7 @@ const RegisterPage = () => {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'rgb(207, 149, 11)' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -108,14 +109,14 @@ const RegisterPage = () => {
                 />
               </Grid>
             </Grid>
-            <Button
+            <StyledButton
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
               Sign Up
-            </Button>
+            </StyledButton>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <Link
@@ -124,6 +125,7 @@ const RegisterPage = () => {
                   sx={{
                     textDecoration: 'none',
                     mr: 10,
+                    color: 'rgb(37, 32, 73)',
                   }}
                 >
                   Already have an account? Sign in

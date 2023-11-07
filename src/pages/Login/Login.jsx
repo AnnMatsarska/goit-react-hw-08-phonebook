@@ -1,5 +1,4 @@
 import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
 import Link from '@mui/material/Link';
@@ -9,10 +8,13 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 import { NavLink } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { loginThunk } from 'redux/auth/operations';
+
+import { StyledButton } from './Login.styled';
 
 function Copyright(props) {
   return (
@@ -31,8 +33,6 @@ function Copyright(props) {
     </Typography>
   );
 }
-
-// TODO remove, this demo shouldn't need to reset the theme.
 
 const defaultTheme = createTheme();
 
@@ -57,7 +57,7 @@ const Login = () => {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: 'rgb(207, 149, 11)' }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
@@ -93,14 +93,19 @@ const Login = () => {
               {...register('password', { minLength: 6 })}
             />
 
-            <Button
+            <StyledButton
               type="submit"
               fullWidth
               variant="contained"
-              sx={{ mt: 3, mb: 2 }}
+              sx={{
+                mt: 3,
+                mb: 2,
+
+                bgcolor: 'action.active',
+              }}
             >
               Login
-            </Button>
+            </StyledButton>
             <Grid container>
               <Grid item>
                 <Link
@@ -109,6 +114,7 @@ const Login = () => {
                   sx={{
                     textDecoration: 'none',
                     ml: 10,
+                    color: 'rgb(37, 32, 73)',
                   }}
                 >
                   {"Don't have an account? Sign Up"}
