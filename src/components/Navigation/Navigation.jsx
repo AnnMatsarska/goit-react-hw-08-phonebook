@@ -1,8 +1,8 @@
 import { useSelector } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+
 import { selectAuthAuthenticated } from 'redux/auth/selectors';
 
-import { NavList } from './Navigation.styled';
+import { NavList, StyledNavLink } from './Navigation.styled';
 
 export const Navigation = () => {
   const isAuthenticated = useSelector(selectAuthAuthenticated);
@@ -11,11 +11,22 @@ export const Navigation = () => {
       <nav>
         <NavList>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <StyledNavLink to="/">Home</StyledNavLink>
           </li>
-          <li>
-            {isAuthenticated && <NavLink to="/contacts">Contacts</NavLink>}
-          </li>
+          {isAuthenticated ? (
+            <li>
+              <StyledNavLink to="/contacts">Contacts</StyledNavLink>
+            </li>
+          ) : (
+            <>
+              <li>
+                <StyledNavLink to="/register">Register</StyledNavLink>
+              </li>
+              <li>
+                <StyledNavLink to="/login">Sign In</StyledNavLink>
+              </li>
+            </>
+          )}
         </NavList>
       </nav>
     </>

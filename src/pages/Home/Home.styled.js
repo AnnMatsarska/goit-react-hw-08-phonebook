@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   width: 600px;
 
-  margin-top: 90px;
+  margin-top: 150px;
   margin-left: auto;
   margin-right: auto;
 
@@ -17,11 +17,13 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.h3`
-  font-size: 28px;
+  margin-top: 40px;
+  // font-size: 28px;
   font-weight: 400;
-  color: rgb(84, 78, 125);
+  color: rgb(207, 149, 11);
 `;
 
 export const SpanText = styled.span`
   font-weight: 700;
+  color: rgb(207, 149, 11);
 `;
