@@ -11,4 +11,5 @@ export const Container = styled.div`
 export const HeaderNav = styled.header`
   display: flex;
   justify-content: space-between;
+  align-items: center;
 `;

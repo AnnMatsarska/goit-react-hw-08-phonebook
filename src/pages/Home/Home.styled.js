@@ -17,7 +17,7 @@ export const Title = styled.h1`
 `;
 
 export const SubTitle = styled.h3`
-  margin-top: 40px;
+  margin-top: 30px;
   // font-size: 28px;
   font-weight: 400;
   color: rgb(207, 149, 11);
